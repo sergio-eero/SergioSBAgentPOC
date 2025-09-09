@@ -24,11 +24,11 @@ uv pip install -e .
 ## Usage
 
 ```bash
-# Run the main script
-python main.py
+# Run the agent (interactive mode)
+uv run python main.py
 
-# Or use the installed command
-eero-agent
+# Or after installing in development mode
+python main.py
 ```
 
 ## Development
@@ -51,15 +51,17 @@ uv run ruff check .
 
 ```
 eero-secureboot-agent/
-├── main.py              # Main entry point
-├── pyproject.toml       # Project configuration
-├── README.md           # This file
-└── .gitignore          # Git ignore rules
+├── main.py                        # Main entry point with CLI
+├── secureboot_enabled_agent.py    # Strands Agent implementation
+├── input_handler.py               # User input handling
+├── models.py                      # Data models (User, InputMessage)
+├── pyproject.toml                 # Project configuration
+├── README.md                      # This file
+└── .gitignore                     # Git ignore rules
 ```
 
 ## Features (Planned)
 
-- [ ] Device discovery and identification
 - [ ] Secure boot status verification
 - [ ] Automated secure boot enablement
 - [ ] Configuration validation
