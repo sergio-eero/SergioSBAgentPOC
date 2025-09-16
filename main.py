@@ -5,9 +5,13 @@ A simple agent to help enable secure boot for new eero devices.
 """
 
 import asyncio
+import os
 from input_handler import InputHandler
 from secureboot_enabled_agent import SecurebootEnabledAgent
 
+# Set AWS region environment variable
+os.environ['AWS_REGION'] = 'us-west-2'
+os.environ["BYPASS_TOOL_CONSENT"] = "true"
 
 async def main():
     """Main entry point for the eero secure boot agent."""

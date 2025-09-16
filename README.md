@@ -4,9 +4,23 @@ An AI agent designed to help enable secure boot for new eero devices.
 
 ## Setup
 
-This project uses `uv` for Python package management. Make sure you have `uv` installed:
+### Prerequisites
+
+This project requires:
+- **Node.js 20** - Required for MCP server functionality
+- **Python 3.11+** - For the main application
+- **uv** - For Python package management
+
+Install the prerequisites:
 
 ```bash
+# Install Node.js 20 (using nvm - recommended)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install 20
+nvm use 20
+
+# Or install Node.js 20 directly from https://nodejs.org/
+
 # Install uv if you haven't already
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```

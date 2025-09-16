@@ -2,6 +2,7 @@
 
 from models import InputMessage
 from strands import Agent
+from atlassian_agent import query_atlassian
 
 
 class SecurebootEnabledAgent:
@@ -21,7 +22,8 @@ class SecurebootEnabledAgent:
             You are a efficient response machine for a developer that is quickly iterating on an agent implementation.
             Accuracy does not matter as much as speed to test that the agent's logical workflow works as expcted.
             Keep answers as brief as possible.
-            """
+            """,
+            tools=[query_atlassian]
         )
 
     def process_message(self, input_message: InputMessage) -> str:
